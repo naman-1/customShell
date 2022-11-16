@@ -1,0 +1,101 @@
+assumes that the any file name doesn't contains a space
+doing a blank enter and writing exit on the shell will exit the shell
+
+cat:
+    flags implemented : n and e
+    usage : cat [-flag] [file ...]
+
+    both flags can be used together and are optional
+    will give error if no parameters are passed
+    it will give error if wrong path is entered
+    it will give error if a directory is entered
+    if one path is wrong then entire statement will not be stopped
+    it will check for correct flag
+
+    -n : number all output lines
+    -e : display $ at the end of each line
+    ex: cat -ne file1 file2 || cat -n file1 file2 || cat -e file1 file2 || cat file1 file2
+
+date:
+    flags implemented : u and r
+    usage : date [-u] [-r file] 
+
+    both flags can be used together and are optional
+    it will give error if wrong path is enterred
+    it will check if proper syntax is used and arguments are passed
+    it will check for correct flag
+
+    -u : print or set Coordinated Universal Time (UTC)
+    -r : display the last modification time of file or directory
+    ex: date -ur file1 || date -r file1 || date -u || date
+
+ls:
+    flags implemented : a and d
+    usage : ls [-a|d] [file ...]
+
+    both flags can be used together and are optional
+    it will give error if wrong path is enterred
+    it will give error if file is enterred
+    it will check for correct flag
+
+    -a : do not ignore entries starting with .
+    -d : list directory entries instead of contents
+    ex: ls -ad [file1 ...] || ls -d [file1 ...]|| ls -a [file1 ...] || ls [file1 ...]
+
+mkdir:
+    flags implemented : v and m
+    usage : mkdir [-v] [-m mode] [file ...]
+
+    both flags can be used together and are optional
+    it will give error if directory exists
+    it will give error for wrong mode enterred
+    it will give error if wrong path is enterred
+    it will give error if file is enterred
+    it will check for correct flag
+
+    -v : print a message for each created directory
+    -m : set file mode (as in chmod)
+        mode is an octal number where each digit represents the permissions for the owner, group and others and the first digit has to be 0 
+        and other subsequent digits can be sum of 1,2,4 (1 for execute, 2 for write and 4 for read)
+    ex: mkdir -vm [file1 ...] || mkdir -v [file1 ...] || mkdir -m 0751 [file1 ...] || mkdir [file1 ...]
+
+rm:
+    flags implemented : d and v
+    usage : rm [-d] [-v] [file ...]
+
+    both flags can be used together and are optional
+    it will give error if wrong path is enterred
+    it will give error if file is enterred
+    it will give error if trying to delete a directory without -d flag
+    it will give error of trying to delete non empty directory
+    it will check for correct flag
+
+    -d : remove empty directories
+    -v : explain what is being done
+    ex: rm -vd [file1 ...] || rm -v [file1 ...] || rm -d [file1 ...] || rm [file1 ...]
+pwd:
+    flags implemented : none
+    usage : pwd
+    it will give error if more than one argument is passed
+
+    it will print the current working directory
+    ex: pwd
+cd:
+    flags implemented : no flags available
+    only cd and cd ~ also works
+    usage : cd [directory]
+    it will give error if more than one argument is passed
+    it will give error if wrong path is enterred
+    it will change the current working directory
+    ex: cd [path] || cd ~ || cd
+echo:
+    flags implemented : n and help
+    usage : echo [-n | -help] [string ...]
+
+    both flags can not be used together and are optional
+    it will give error if wrong flag is enterred
+    it will work if no arguments are passed and print empty line
+
+    -n : do not output the trailing newline
+    -help : display help
+    ex: echo -n [string ...] || echo -help || echo [string ...]
