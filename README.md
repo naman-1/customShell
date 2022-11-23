@@ -1,4 +1,6 @@
 # OperatingSystems
 Process to run:
-make
-./main
+ 
+$ make
+
+$ ./main
